@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Семейный Финансовый Планировщик</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Семейный Финансовый Планировщик</h1>
+
+    <!-- Секция Сводки -->
+    <section class="summary">
+      <h2>Финансовая Сводка</h2>
+      <div class="summary-card">
+        <p>Общий Доход: <span id="total-income">$0</span></p>
+        <p>Общие Расходы: <span id="total-expenses">$0</span></p>
+        <p>Баланс: <span id="balance">$0</span></p>
+      </div>
+    </section>
+
+    <!-- Форма Целей -->
+    <section class="form-section">
+      <h2>Добавить Финансовую Цель</h2>
+      <form id="goal-form" class="form">
+        <label for="goal-name">Название Цели:</label>
+        <input type="text" id="goal-name" name="goalName" required><br>
+
+        <label for="target-amount">Целевая Сумма:</label>
+        <input type="number" id="target-amount" name="targetAmount" required><br>
+
+        <label for="due-date">Срок Выполнения:</label>
+        <input type="date" id="due-date" name="dueDate"><br>
+
+        <button type="submit">Добавить Цель</button>
+      </form>
+
+      <div id="goal-list" class="list"></div>
+    </section>
+
+    <!-- Форма Расходов -->
+    <section class="form-section">
+      <h2>Добавить Расход</h2>
+      <form id="expense-form" class="form">
+        <label for="expense-category">Категория:</label>
+        <input type="text" id="expense-category" name="expenseCategory" required><br>
+
+        <label for="expense-amount">Сумма:</label>
+        <input type="number" id="expense-amount" name="expenseAmount" required><br>
+
+        <label for="expense-date">Дата:</label>
+        <input type="date" id="expense-date" name="expenseDate" required><br>
+
+        <button type="submit">Добавить Расход</button>
+      </form>
+
+      <div id="expense-list" class="list"></div>
+    </section>
+
+    <!-- Форма Доходов -->
+    <section class="form-section">
+      <h2>Добавить Доход</h2>
+      <form id="income-form" class="form">
+        <label for="income-source">Источник:</label>
+        <input type="text" id="income-source" name="incomeSource" required><br>
+
+        <label for="income-amount">Сумма:</label>
+        <input type="number" id="income-amount" name="incomeAmount" required><br>
+
+        <label for="income-date">Дата:</label>
+        <input type="date" id="income-date" name="incomeDate" required><br>
+
+        <button type="submit">Добавить Доход</button>
+      </form>
+
+      <div id="income-list" class="list"></div>
+    </section>
+<!-- Секция Калькулятора -->
+     <section class="calculator-section">
+  <h2>Калькулятор Финансов</h2>
+  <p>Введите сумму доходов и расходов, чтобы получить итоги.</p>
+  
+  <label for="income-input">Сумма Доходов:</label>
+  <input type="number" id="income-input" placeholder="Введите сумму доходов">
+
+  <label for="expense-input">Сумма Расходов:</label>
+  <input type="number" id="expense-input" placeholder="Введите сумму расходов">
+
+  <button id="calculate-button">Посчитать</button>
+  
+  <h3>Результаты:</h3>
+  <p>Общий Доход: <span id="calculated-income">$0</span></p>
+  <p>Общие Расходы: <span id="calculated-expenses">$0</span></p>
+  <p>Баланс: <span id="calculated-balance">$0</span></p>
+     </section>
+
+    <!-- Диаграмма Расходов -->
+    <section class="chart-section">
+      <h2>Диаграмма Расходов</h2>
+      <canvas id="expense-chart" width="400" height="400"></canvas>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
